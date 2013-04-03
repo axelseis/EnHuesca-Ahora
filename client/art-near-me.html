@@ -1,0 +1,110 @@
+<head>
+  <title>ArtNearMe | Brisbane</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Icon-114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Icon-72.png" />
+  <link rel="apple-touch-icon-precomposed" href="/Icon-57.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="cleartype" content="on">
+</head>
+
+<body>
+  <div id="map"></div>
+  {{> ranger}}
+  {{> locator}}
+  <footer class="navbar navbar-fixed-bottom">
+    <div class="navbar-inner">
+      <div class="container">
+        <div class="brand">art near me <small>Brisbane</small></div>
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            {{> navDocs}}
+            <li><a href="https://twitter.com/artnearmeapp" target="_blank"><i class="icon-twitter"></i> Follow @artnearmeapp</a>
+</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+<template name="ranger">
+  <div id="ranger" class="btn-group {{hidden}}">
+    <a class="btn btn-large btn-inverse dropdown-toggle" data-toggle="dropdown" href="#">
+      {{range}}
+    </a>
+    <ul class="dropdown-menu">
+      {{#each ranges}}
+      <li><a href="#" class="range" data-range="{{this}}">{{this}}m</a></li>
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="locator">
+  <div id="locator" class="{{hidden}}">
+    <a class="btn btn-large {{live}}" href="#" {{disabled}}>
+      <i class="icon-locator"></i>
+    </a>
+  </div>
+</template>
+
+<template name="navDocs">
+  {{#each docs}}
+  {{> navDocItem}}
+  {{/each}}
+</template>
+
+<template name="navDocItem">
+  <li><a href="#" data-id="{{_id}}">{{title}}</a></li>
+</template>
+
+<template name="artworkModal">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="close" data-dismiss="modal">×</button>
+      <h3>{{title}}</h3>
+    </div>
+    <div class="modal-body">
+      {{#if artistName}}<h4>Artist/s</h4><p>{{artistName}}</p>{{/if}}
+      {{#if briefDescription}}<h4>Description</h4><p>{{briefDescription}}</p>{{/if}}
+      {{#if subject}}<h4>Subject/s</h4><p>{{subject}}</p>{{/if}}
+      {{#if theme}}<h4>Theme/s</h4><p>{{theme}}</p>{{/if}}
+      {{#if productionDate}}<h4>Date</h4><p>{{productionDate}}</p>{{/if}}
+      {{#if objectType}}<h4>Object Type</h4><p>{{objectType}}</p>{{/if}}
+      {{#if mediaAndMaterials}}<h4>Media &amp; Materials</h4><p>{{mediaAndMaterials}}</p>{{/if}}
+      {{#if measurements}}<h4>Measurements</h4><p>{{measurements}}</p>{{/if}}
+      {{#if installation}}<!--<h4>Installation</h4><p>{{installation}}</p>-->{{/if}}
+      {{#if locationStreet}}<h4>Address</h4><p>{{locationStreet}}</p>{{/if}}
+    </div>
+    <div class="modal-footer">
+      <a href="{{tweet}}" class="btn" target="_blank"><i class="icon-twitter-alt"></i> Share on Twitter</a>
+      <a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+  </div>
+</template>
+
+<template name="docModal">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="close" data-dismiss="modal">×</button>
+      <h3>{{title}}</h3>
+    </div>
+    <div class="modal-body">
+      {{{body}}}
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+  </div>
+</template>

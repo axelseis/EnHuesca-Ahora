@@ -1,0 +1,15 @@
+/* the humans responsible & colophon [humanstxt.org] */
+
+/* TEAM */
+  Developer: Colin Gourlay
+  Site: http://colin-gourlay.com
+  Twitter: @collypops
+  Location: Brisbane, Australia
+
+/* THANKS */
+  Apple app icons by Kevin Vanderbeken (http://au.linkedin.com/in/kevdesign)
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Node.js, Meteor, Underscore.js, Backbone.js,
+    Handlebars.js, jQuery, Bootstrap

@@ -1,0 +1,149 @@
+body {
+  padding: 0 0 40px;
+  background-color: #E5E3DF;
+}
+body:before {
+  content: 'loading';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  margin-top: -1em;
+  color: #999;
+  line-height: 1;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+}
+#ranger,
+#locator {
+  position: absolute;
+  top: 5px;
+}
+#ranger {
+  left: 5px;
+}
+#ranger .btn {
+  background-image: url(/glyphicons/png/glyphicons_095_vector_path_circle_white.png);
+  background-repeat: no-repeat;
+  background-position: 8px 6px;
+  padding-left: 40px;
+}
+#ranger .dropdown-menu {
+  min-width: 98%;
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+#ranger .dropdown-menu a {
+  padding: 8px 12px;
+  font-size: 15px;
+}
+#locator {
+  right: 5px;
+}
+#locator .btn {
+  background-image: url(/glyphicons/png/glyphicons_239_riflescope_white.png);
+  background-repeat: no-repeat;
+  background-position: 9px 6px;
+}
+.modal {
+  background-color: #F5F5F5;
+}
+.modal-header,
+.modal-body {
+  background-color: #FFF;
+}
+.modal-body {
+  max-height: 350px;
+  padding: 15px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.close,
+.close:hover {
+  border: 0;
+  background-color: transparent;
+}
+.navbar .brand {
+  word-spacing: -2px;
+  letter-spacing: -1px;
+  font-size: 25px;
+  line-height: 0.8;
+  text-shadow: 0 0 2px #333;
+  padding-right: 25px;
+  margin-right: 20px;
+  background-image: url(/pinner40high.png);
+  background-size: 21px 30px;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.navbar .brand small {
+  text-transform: uppercase;
+  color: #93DFEB;
+  font-size: 19px;
+  letter-spacing: 0;
+  margin-left: 2px;
+}
+.navbar .nav > li > a {
+  font-weight: bold;
+}
+.icon-twitter,
+.icon-twitter-alt {
+  background-image: url(/bird_16_gray.png);
+  background-position: 0 0;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+.icon-twitter-alt {
+  background-image: url(/bird_16_blue.png);
+}
+.navbar .btn,
+.navbar .btn-group {
+  margin-top: 0;
+}
+.btn-navbar {
+  padding: 12px;
+  margin-right: 0;
+}
+@media (max-width: 979px) {
+  body {
+    padding: 0;
+  }
+  .navbar-fixed-bottom .navbar-inner {
+    padding: 5px;
+  }
+  #map {
+    bottom: 50px;
+  }
+  .modal {
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    left: 3%;
+    bottom: 3%;
+    width: auto;
+    margin: 0;
+  }
+  .modal-body {
+    height: 70%;
+  }
+  .navbar .brand {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 480px) and (orientation: landscape) {
+  footer {
+    display: none;
+  }
+  #map {
+    bottom: 0;
+  }
+}
